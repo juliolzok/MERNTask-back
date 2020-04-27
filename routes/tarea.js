@@ -12,7 +12,8 @@ const auth = require('../middleware/auth');
 router.post('/',
     auth,
     [
-        check('nombre', 'El nombre es obligatorio').not().isEmpty()
+        check('nombre', 'El nombre es obligatorio').not().isEmpty(),
+        check('proyecto', 'El proyecto es obligatorio').not().isEmpty()
     ],
     tareaController.crearTarea
 )
