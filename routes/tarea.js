@@ -16,6 +16,27 @@ router.post('/',
         check('proyecto', 'El proyecto es obligatorio').not().isEmpty()
     ],
     tareaController.crearTarea
+);
+
+// obtener las tareas por proyecto
+
+router.get('/',
+    auth,
+    tareaController.obtenerTareas
+
+);
+
+// actualizar transitionDelay: 
+router.put('/:id',
+    auth,
+    tareaController.actualizarTarea
+);
+
+// eliminar tareas
+
+router.delete('/:id',
+    auth,
+    tareaController.eliminarTarea
 )
 
 
